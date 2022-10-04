@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Крестики-нолики</string>
+    <string name="player_x_turn">Очередь игрока: X</string>
+    <string name="player_o_turn">Очередь игрока: O</string>
+    <string name="player_x_won">Выиграл игрок X</string>
+    <string name="player_o_won">Выиграл игрок O</string>
+    <string name="draw">Ничья</string>
+    <string name="restart">Restart</string>
 </resources>

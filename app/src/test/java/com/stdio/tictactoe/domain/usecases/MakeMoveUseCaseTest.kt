@@ -15,50 +15,50 @@ class MakeMoveUseCaseTest {
     @Test
     fun `horizontal win for X`() {
         val makeMoveUseCase = MakeMoveUseCase()
-        assertEquals(GameState.Continue, makeMoveUseCase(0))// X
-        assertEquals(GameState.Continue, makeMoveUseCase(4))// O
-        assertEquals(GameState.Continue, makeMoveUseCase(8))// X
-        assertEquals(GameState.Continue, makeMoveUseCase(2))// O
-        assertEquals(GameState.Continue, makeMoveUseCase(6))// X
-        assertEquals(GameState.Continue, makeMoveUseCase(3))// O
-        assertEquals(GameState.HorizontalWin(Player.X), makeMoveUseCase(7))// X
+        assertEquals(GameState.Continue(Player.X, 0), makeMoveUseCase(0))
+        assertEquals(GameState.Continue(Player.O, 4), makeMoveUseCase(4))
+        assertEquals(GameState.Continue(Player.X, 8), makeMoveUseCase(8))
+        assertEquals(GameState.Continue(Player.O, 2), makeMoveUseCase(2))
+        assertEquals(GameState.Continue(Player.X, 6), makeMoveUseCase(6))
+        assertEquals(GameState.Continue(Player.O, 3), makeMoveUseCase(3))
+        assertEquals(GameState.HorizontalWin(Player.X, 7), makeMoveUseCase(7))
     }
 
     @Test
     fun `vertical win for X`() {
         val makeMoveUseCase = MakeMoveUseCase()
-        assertEquals(GameState.Continue, makeMoveUseCase(0))// X
-        assertEquals(GameState.Continue, makeMoveUseCase(4))// O
-        assertEquals(GameState.Continue, makeMoveUseCase(8))// X
-        assertEquals(GameState.Continue, makeMoveUseCase(2))// O
-        assertEquals(GameState.Continue, makeMoveUseCase(6))// X
-        assertEquals(GameState.Continue, makeMoveUseCase(7))// O
-        assertEquals(GameState.VerticalWin(Player.X), makeMoveUseCase(3))// X
+        assertEquals(GameState.Continue(Player.X, 0), makeMoveUseCase(0))
+        assertEquals(GameState.Continue(Player.O, 4), makeMoveUseCase(4))
+        assertEquals(GameState.Continue(Player.X, 8), makeMoveUseCase(8))
+        assertEquals(GameState.Continue(Player.O, 2), makeMoveUseCase(2))
+        assertEquals(GameState.Continue(Player.X, 6), makeMoveUseCase(6))
+        assertEquals(GameState.Continue(Player.O, 7), makeMoveUseCase(7))
+        assertEquals(GameState.VerticalWin(Player.X, 3), makeMoveUseCase(3))
     }
 
     @Test
     fun `diagonal win for X`() {
         val makeMoveUseCase = MakeMoveUseCase()
-        assertEquals(GameState.Continue, makeMoveUseCase(4))// X
-        assertEquals(GameState.Continue, makeMoveUseCase(5))// O
-        assertEquals(GameState.Continue, makeMoveUseCase(8))// X
-        assertEquals(GameState.Continue, makeMoveUseCase(0))// O
-        assertEquals(GameState.Continue, makeMoveUseCase(6))// X
-        assertEquals(GameState.Continue, makeMoveUseCase(7))// O
-        assertEquals(GameState.DiagonalWin(Player.X), makeMoveUseCase(2))// X
+        assertEquals(GameState.Continue(Player.X, 4), makeMoveUseCase(4))
+        assertEquals(GameState.Continue(Player.O, 5), makeMoveUseCase(5))
+        assertEquals(GameState.Continue(Player.X, 8), makeMoveUseCase(8))
+        assertEquals(GameState.Continue(Player.O, 0), makeMoveUseCase(0))
+        assertEquals(GameState.Continue(Player.X, 6), makeMoveUseCase(6))
+        assertEquals(GameState.Continue(Player.O, 7), makeMoveUseCase(7))
+        assertEquals(GameState.DiagonalWin(Player.X, 2), makeMoveUseCase(2))
     }
 
     @Test
     fun draw() {
         val makeMoveUseCase = MakeMoveUseCase()
-        assertEquals(GameState.Continue, makeMoveUseCase(0))// X
-        assertEquals(GameState.Continue, makeMoveUseCase(4))// O
-        assertEquals(GameState.Continue, makeMoveUseCase(8))// X
-        assertEquals(GameState.Continue, makeMoveUseCase(1))// O
-        assertEquals(GameState.Continue, makeMoveUseCase(7))// X
-        assertEquals(GameState.Continue, makeMoveUseCase(6))// O
-        assertEquals(GameState.Continue, makeMoveUseCase(2))// X
-        assertEquals(GameState.Continue, makeMoveUseCase(5))// O
-        assertEquals(GameState.Draw, makeMoveUseCase(3))// X
+        assertEquals(GameState.Continue(Player.X, 0), makeMoveUseCase(0))
+        assertEquals(GameState.Continue(Player.O, 4), makeMoveUseCase(4))
+        assertEquals(GameState.Continue(Player.X, 8), makeMoveUseCase(8))
+        assertEquals(GameState.Continue(Player.O, 1), makeMoveUseCase(1))
+        assertEquals(GameState.Continue(Player.X, 7), makeMoveUseCase(7))
+        assertEquals(GameState.Continue(Player.O, 6), makeMoveUseCase(6))
+        assertEquals(GameState.Continue(Player.X, 2), makeMoveUseCase(2))
+        assertEquals(GameState.Continue(Player.O, 5), makeMoveUseCase(5))
+        assertEquals(GameState.Draw(Player.X, 3), makeMoveUseCase(3))
     }
 }
